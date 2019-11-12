@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Javascript基础</title>
-    <url>/2019/10/29/Javascript%E5%9F%BA%E7%A1%80/</url>
+    <title>Js基础笔记</title>
+    <url>/2019/11/12/Js%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="第一个-js-程序"><a href="#第一个-js-程序" class="headerlink" title="第一个 js 程序"></a><strong>第一个 js 程序</strong></h1><h2 id="浏览器环境中，代码书写位置"><a href="#浏览器环境中，代码书写位置" class="headerlink" title="浏览器环境中，代码书写位置"></a><strong>浏览器环境中，代码书写位置</strong></h2><ol>
 <li>直接书写到页面中的 script 元素的内部.</li>
 <li>书写到外部的 js 文件,在页面中引入[推荐].</li>
@@ -255,7 +255,6 @@
 <li>如果变量没有被赋值,则该变量不会覆盖 window 对象上的同名属性</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>);</span><br><span class="line"><span class="comment">//  a成为window对象上的属性,因为,window之前没有属性a</span></span><br></pre></td></tr></table></figure>
-
 
 <h1 id="引用类型-1"><a href="#引用类型-1" class="headerlink" title="引用类型"></a>引用类型</h1><ul>
 <li><strong>原始类型的变量,存放具体的值</strong></li>
@@ -943,7 +942,7 @@ e.执行 C</code></pre><p>例子：</p>
 <li>包装器(值):返回的是一个原始类型</li>
 </ul>
 <p><strong>练习</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">width</span>=<span class="string">"500px"</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">id</span>=<span class="string">"myTable"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>名字<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>性别<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>分数<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> myTable = <span class="built_in">document</span>.getElementById(<span class="string">"myTable"</span>);</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// nameL名字，gender:性别，score:分数</span></span></span><br><span class="line"><span class="actionscript">    <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">constructor</span>(name, gender, score) &#123;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">this</span>.name = name;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">this</span>.gender = gender;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">this</span>.score = score;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">this</span>.mount();</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="actionscript">        <span class="comment">// 将数据插入到表中</span></span></span><br><span class="line">        mount() &#123;</span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> tr = <span class="built_in">document</span>.createElement(<span class="string">'tr'</span>);</span></span><br><span class="line">            tr.innerHTML = `</span><br><span class="line"><span class="handlebars"><span class="xml">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>$&#123;this.name&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>$&#123;this.gender&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>$&#123;this.score&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span></span><br><span class="line">            `;</span><br><span class="line">            myTable.appendChild(tr);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> my = <span class="keyword">new</span> Student(<span class="string">"王花花"</span>, <span class="string">"男"</span>, <span class="number">54</span>);</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> my1 = <span class="keyword">new</span> Student(<span class="string">"王八"</span>, <span class="string">"女"</span>, <span class="number">66</span>);</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> my2 = <span class="keyword">new</span> Student(<span class="string">"王二狗"</span>, <span class="string">"男"</span>, <span class="number">98</span>);</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> my3 = <span class="keyword">new</span> Student(<span class="string">"王四"</span>, <span class="string">"女"</span>, <span class="number">78</span>);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">width</span>=<span class="string">"500px"</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">id</span>=<span class="string">"myTable"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>名字<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>性别<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>分数<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> myTable = <span class="built_in">document</span>.getElementById(<span class="string">"myTable"</span>);</span></span><br><span class="line"><span class="actionscript">  <span class="comment">// nameL名字，gender:性别，score:分数</span></span></span><br><span class="line"><span class="actionscript">  <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">constructor</span>(name, gender, score) &#123;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">this</span>.name = name;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">this</span>.gender = gender;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">this</span>.score = score;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">this</span>.mount();</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="actionscript">    <span class="comment">// 将数据插入到表中</span></span></span><br><span class="line">    mount() &#123;</span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> tr = <span class="built_in">document</span>.createElement(<span class="string">"tr"</span>);</span></span><br><span class="line">      tr.innerHTML = `</span><br><span class="line"><span class="handlebars"><span class="xml">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>$&#123;this.name&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>$&#123;this.gender&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>$&#123;this.score&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span></span><br><span class="line">            `;</span><br><span class="line">      myTable.appendChild(tr);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="actionscript">  <span class="keyword">var</span> my = <span class="keyword">new</span> Student(<span class="string">"王花花"</span>, <span class="string">"男"</span>, <span class="number">54</span>);</span></span><br><span class="line"><span class="actionscript">  <span class="keyword">var</span> my1 = <span class="keyword">new</span> Student(<span class="string">"王八"</span>, <span class="string">"女"</span>, <span class="number">66</span>);</span></span><br><span class="line"><span class="actionscript">  <span class="keyword">var</span> my2 = <span class="keyword">new</span> Student(<span class="string">"王二狗"</span>, <span class="string">"男"</span>, <span class="number">98</span>);</span></span><br><span class="line"><span class="actionscript">  <span class="keyword">var</span> my3 = <span class="keyword">new</span> Student(<span class="string">"王四"</span>, <span class="string">"女"</span>, <span class="number">78</span>);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><h3 id="静态成员-2"><a href="#静态成员-2" class="headerlink" title="静态成员"></a>静态成员</h3><ul>
 <li>isNaN:判断一个值是不是 NaN</li>
@@ -957,12 +956,12 @@ e.执行 C</code></pre><p>例子：</p>
 <h3 id="实例成员-3"><a href="#实例成员-3" class="headerlink" title="实例成员"></a>实例成员</h3><ul>
 <li>toFixed:返回用定点表示法表示数字的字符串,会有四舍五入.</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span>  a = <span class="number">3.1415926</span></span><br><span class="line"><span class="built_in">console</span>.log(a.toFixed(<span class="number">2</span>)); <span class="comment">//3.14</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">3.1415926</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a.toFixed(<span class="number">2</span>)); <span class="comment">//3.14</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>toPrecision:以指定的精度返回一个数字字符串</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span>  a = <span class="number">312.1415926</span></span><br><span class="line"><span class="built_in">console</span>.log(a.toPrecision(<span class="number">4</span>)); <span class="comment">//312.1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">312.1415926</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a.toPrecision(<span class="number">4</span>)); <span class="comment">//312.1</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h2><h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><blockquote>
 <p>String 全局对象是一个用于字符串或一个字符序列的构造函数。</p>
@@ -978,71 +977,143 @@ e.执行 C</code></pre><p>例子：</p>
 <li>\t : 水平制表符</li>
 <li>\b : 退格</li>
 <li>\f : 换页</li>
-<li>\uXXXX    unicode 码</li>
-<li>\u{X} … \u{XXXXXX}    unicode codepoint </li>
-<li>\xXX    Latin-1 字符(x小写)</li>
+<li>\uXXXX unicode 码</li>
+<li>\u{X} … \u{XXXXXX} unicode codepoint</li>
+<li>\xXX Latin-1 字符(x 小写)</li>
 </ul>
 <h3 id="静态成员-3"><a href="#静态成员-3" class="headerlink" title="静态成员"></a>静态成员</h3><ul>
-<li>fromCharCode:通过一串Unicode创建字符串</li>
+<li>fromCharCode:通过一串 Unicode 创建字符串</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>.fromCharCode(<span class="number">65</span>,<span class="number">66</span>));<span class="comment">//"A,B"</span></span><br><span class="line"><span class="string">``</span><span class="string">`   </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">- fromCodePoint:通过一串码点创建字符串    </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">### 实例成员</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">- length : 得到字符串长度</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&gt; 字符串是一个伪数组</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">- charAt : 返回特定位置的字符串 </span></span><br><span class="line"><span class="string">- charCodeAt : 返回给定索引的字符的unicode的值</span></span><br><span class="line"><span class="string">- concat : 将一个或多个字符串与原字符串连接合并,形成一个新的字符串并返回.</span></span><br><span class="line"><span class="string">- includes:判断一个字符串里是否包含其他字符串</span></span><br><span class="line"><span class="string">- endsWith : 判断一个字符串是否包含其他字符串中的字符</span></span><br><span class="line"><span class="string">- startsWith : 判断字符串的起始位置是否匹配其他字符串中的字符。</span></span><br><span class="line"><span class="string">- indexOf</span></span><br><span class="line"><span class="string">- lastIndexOf</span></span><br><span class="line"><span class="string">- match</span></span><br><span class="line"><span class="string">- padEnd : 在当前字符串尾部填充指定的字符串， 直到达到指定的长度。 返回一个新的字符串。</span></span><br><span class="line"><span class="string">- padStart : 在当前字符串头部填充指定的字符串， 直到达到指定的长度。 返回一个新的字符串。</span></span><br><span class="line"><span class="string">- padEnd : 在当前字符串尾部填充指定的字符串， 直到达到指定的长度。 返回一个新的字符串。</span></span><br><span class="line"><span class="string">- repeat : 返回指定重复次数的由元素组成的字符串对象。</span></span><br><span class="line"><span class="string">- replace : 被用来在正则表达式和字符串直接比较，然后用新的子串来替换被匹配的子串</span></span><br><span class="line"><span class="string">- 对正则表达式和指定字符串进行匹配搜索，返回第一个出现的匹配项的下标。</span></span><br><span class="line"><span class="string">- slice : 摘取一个字符串区域，返回一个新的字符串。(位置可以是负数)</span></span><br><span class="line"><span class="string">- substr : 通过指定字符数返回在指定位置开始的字符串中的字符。(位置可以是负数)</span></span><br><span class="line"><span class="string">- substring : 返回在字符串中指定两个下标之间的字符。(不能为负,为负则转换成0)</span></span><br><span class="line"><span class="string">- toLowerCase : 将字符串转换成小写并返回。</span></span><br><span class="line"><span class="string">- toUpperCase : 将字符串转换成大写并返回。</span></span><br><span class="line"><span class="string">- trim : 从字符串的开始和结尾去除空格</span></span><br><span class="line"><span class="string">- split : 通过分离字符串成字串，将字符串对象分割成字符串数组</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># Math 对象 (Math Javascript MDN)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Math 是一个内置对象， 它具有数学常数和函数的属性和方法。不是一个函数对象。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&gt; 常量:永远不会变化的数据.常量一般命名时所有字母大写,如果有多个单词,则用下划线分隔</span></span><br><span class="line"><span class="string">&gt; </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">- reandom方法: 产生一个0~1的随机数</span></span><br><span class="line"><span class="string">- PI属性:得到圆周率</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>js</span><br><span class="line"><span class="built_in">Math</span>.PI</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>.fromCharCode(<span class="number">65</span>, <span class="number">66</span>)); <span class="comment">//"A,B"</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>abs(x):返回x的绝对值</li>
-<li>floor(x):返回小于x的最大整数(向下取整)。</li>
-<li>ceil(x):返回大于x的最大整数(向上取整)。</li>
-<li>max方法:得到一组数字的最大值,如果无参,得到-infinite</li>
-<li>min方法:得到一组数字的最小值,如果无参,得到infinite</li>
-<li>round方法:返回一个数字四舍五入后最接近的整数。</li>
+<li>fromCodePoint:通过一串码点创建字符串</li>
+</ul>
+<h3 id="实例成员-4"><a href="#实例成员-4" class="headerlink" title="实例成员"></a>实例成员</h3><ul>
+<li>length : 得到字符串长度</li>
+</ul>
+<blockquote>
+<p>字符串是一个伪数组</p>
+</blockquote>
+<ul>
+<li>charAt : 返回特定位置的字符串</li>
+<li>charCodeAt : 返回给定索引的字符的 unicode 的值</li>
+<li>concat : 将一个或多个字符串与原字符串连接合并,形成一个新的字符串并返回.</li>
+<li>includes:判断一个字符串里是否包含其他字符串</li>
+<li>endsWith : 判断一个字符串是否包含其他字符串中的字符</li>
+<li>startsWith : 判断字符串的起始位置是否匹配其他字符串中的字符。</li>
+<li>indexOf</li>
+<li>lastIndexOf</li>
+<li>match</li>
+<li>padEnd : 在当前字符串尾部填充指定的字符串， 直到达到指定的长度。 返回一个新的字符串。</li>
+<li>padStart : 在当前字符串头部填充指定的字符串， 直到达到指定的长度。 返回一个新的字符串。</li>
+<li>padEnd : 在当前字符串尾部填充指定的字符串， 直到达到指定的长度。 返回一个新的字符串。</li>
+<li>repeat : 返回指定重复次数的由元素组成的字符串对象。</li>
+<li>replace : 被用来在正则表达式和字符串直接比较，然后用新的子串来替换被匹配的子串</li>
+<li>对正则表达式和指定字符串进行匹配搜索，返回第一个出现的匹配项的下标。</li>
+<li>slice : 摘取一个字符串区域，返回一个新的字符串。(位置可以是负数)</li>
+<li>substr : 通过指定字符数返回在指定位置开始的字符串中的字符。(位置可以是负数)</li>
+<li>substring : 返回在字符串中指定两个下标之间的字符。(不能为负,为负则转换成 0)</li>
+<li>toLowerCase : 将字符串转换成小写并返回。</li>
+<li>toUpperCase : 将字符串转换成大写并返回。</li>
+<li>trim : 从字符串的开始和结尾去除空格</li>
+<li>split : 通过分离字符串成字串，将字符串对象分割成字符串数组</li>
+</ul>
+<h1 id="Math-对象-Math-Javascript-MDN"><a href="#Math-对象-Math-Javascript-MDN" class="headerlink" title="Math 对象 (Math Javascript MDN)"></a>Math 对象 (Math Javascript MDN)</h1><p>Math 是一个内置对象， 它具有数学常数和函数的属性和方法。不是一个函数对象。</p>
+<blockquote>
+<p>常量:永远不会变化的数据.常量一般命名时所有字母大写,如果有多个单词,则用下划线分隔</p>
+</blockquote>
+<ul>
+<li>reandom 方法: 产生一个 0~1 的随机数</li>
+<li>PI 属性:得到圆周率</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Math</span>.PI;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>abs(x):返回 x 的绝对值</li>
+<li>floor(x):返回小于 x 的最大整数(向下取整)。</li>
+<li>ceil(x):返回大于 x 的最大整数(向上取整)。</li>
+<li>max 方法:得到一组数字的最大值,如果无参,得到-infinite</li>
+<li>min 方法:得到一组数字的最小值,如果无参,得到 infinite</li>
+<li>round 方法:返回一个数字四舍五入后最接近的整数。</li>
 <li>……</li>
 </ul>
 <h1 id="Date-构造器-Date-javascript-MDN"><a href="#Date-构造器-Date-javascript-MDN" class="headerlink" title="Date 构造器 (Date javascript MDN)"></a>Date 构造器 (Date javascript MDN)</h1><h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><ol>
-<li><p>时间单位</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">年(year),</span><br><span class="line">月(month),</span><br><span class="line">日(date),</span><br><span class="line">小时(hour),</span><br><span class="line">分钟(minute),</span><br><span class="line">秒(second),  = <span class="number">1000</span>ms</span><br><span class="line">毫秒(millisecond,ms), = <span class="number">1000</span> us </span><br><span class="line">微秒(microsecond,us), = <span class="number">1000</span> ns</span><br><span class="line">纳秒(nanosecond,ns)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>UTC和GMT</p>
+<li>时间单位</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">年(year),</span><br><span class="line">月(month),</span><br><span class="line">日(date),</span><br><span class="line">小时(hour),</span><br><span class="line">分钟(minute),</span><br><span class="line">秒(second),  = <span class="number">1000</span>ms</span><br><span class="line">毫秒(millisecond,ms), = <span class="number">1000</span> us</span><br><span class="line">微秒(microsecond,us), = <span class="number">1000</span> ns</span><br><span class="line">纳秒(nanosecond,ns)</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>UTC 和 GMT</li>
+</ol>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">世界划分为<span class="number">24</span>个时区,北京在东<span class="number">8</span>区,格林威治在<span class="number">0</span>时区</span><br><span class="line"></span><br><span class="line">UTC(Universal Time Coodinated) : 世界协调时,以原子时间为计时标准,精确到纳秒</span><br><span class="line">GMT(Greewish Mean Time)  : 格林威治世界时,根据太阳的自转与公转得出,太阳时,精确到毫秒</span><br><span class="line"></span><br><span class="line">UTC和GMT之间误差不超过<span class="number">0.9</span>秒</span><br><span class="line"></span><br><span class="line">+ 东   :   - 西</span><br><span class="line"></span><br><span class="line">GMT +<span class="number">0800</span> 东<span class="number">8</span>区</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>时间戳</p>
+
+<ol start="3">
+<li>时间戳</li>
+</ol>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">数字</span><br><span class="line"></span><br><span class="line"><span class="number">1970</span><span class="number">-1</span><span class="number">-1</span> 凌晨 到 某个时间 所经过的毫秒数</span><br></pre></td></tr></table></figure>
 
-</li>
-</ol>
 <h2 id="创建时间对象"><a href="#创建时间对象" class="headerlink" title="创建时间对象"></a>创建时间对象</h2><ul>
-<li>直接调用函数(不适用new),忽略所有参数,直接返回当前时间的字符串<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Date</span>();<span class="comment">//"Wed Oct 09 2019 10:07:41 GMT+0800 (中国标准时间)"</span></span><br></pre></td></tr></table></figure></li>
+<li>直接调用函数(不适用 new),忽略所有参数,直接返回当前时间的字符串</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Date</span>(); <span class="comment">//"Wed Oct 09 2019 10:07:41 GMT+0800 (中国标准时间)"</span></span><br></pre></td></tr></table></figure>
+
+<ul>
 <li>new Date():创建日期对象</li>
 </ul>
 <ol>
 <li>无参,当前时间</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(date);<span class="string">"Wed Oct 09 2019 10:07:41 GMT+0800 (中国标准时间)"</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>1个参数,参数为数字,表示传入的是时间戳</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1000</span>);</span><br><span class="line"><span class="comment">// Thu Jan 01 1970 08:00:01 GMT+0800 (中国标准时间)</span></span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">3. 两个参数以上,分别表示年,月,日,时,分,秒,毫秒</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&gt; 注意:月份的数字从0开始</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>js</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2019</span>,<span class="number">10</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">30</span>,<span class="number">20</span>,<span class="number">200</span>);</span><br><span class="line"><span class="comment">// Sat Nov 09 2019 10:30:20 GMT+0800 (中国标准时间)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(date);</span><br><span class="line">(<span class="string">"Wed Oct 09 2019 10:07:41 GMT+0800 (中国标准时间)"</span>);</span><br></pre></td></tr></table></figure>
 
-<p>如果缺失参数,日期部分默认为1,时分秒毫秒默认为0</p>
+<ol start="2">
+<li>1 个参数,参数为数字,表示传入的是时间戳</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1000</span>);</span><br><span class="line"><span class="comment">// Thu Jan 01 1970 08:00:01 GMT+0800 (中国标准时间)</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>两个参数以上,分别表示年,月,日,时,分,秒,毫秒</li>
+</ol>
+<blockquote>
+<p>注意:月份的数字从 0 开始</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2019</span>, <span class="number">10</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">30</span>, <span class="number">20</span>, <span class="number">200</span>);</span><br><span class="line"><span class="comment">// Sat Nov 09 2019 10:30:20 GMT+0800 (中国标准时间)</span></span><br></pre></td></tr></table></figure>
+
+<p>如果缺失参数,日期部分默认为 1,时分秒毫秒默认为 0</p>
 <p>月,日,时,分,秒,毫秒,均可以传递负数,如果传递负数,会根据指定日期进行计算</p>
-<h2 id="实例成员-4"><a href="#实例成员-4" class="headerlink" title="实例成员"></a>实例成员</h2><ul>
-<li>getDate方法:得到日期部分<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(d);<span class="comment">//Wed Oct 09 2019 10:52:24 GMT+0800 (中国标准时间)</span></span><br><span class="line">d.getDate();<span class="comment">//9</span></span><br></pre></td></tr></table></figure></li>
-<li>getDay方法:根据本地时间返回指定日期对象的星期中的第几天（0-6）.0表示星期天</li>
+<h2 id="实例成员-5"><a href="#实例成员-5" class="headerlink" title="实例成员"></a>实例成员</h2><ul>
+<li>getDate 方法:得到日期部分</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(d);<span class="comment">//Wed Oct 09 2019 10:52:24 GMT+0800 (中国标准时间)</span></span><br><span class="line">d.getDay();<span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(d); <span class="comment">//Wed Oct 09 2019 10:52:24 GMT+0800 (中国标准时间)</span></span><br><span class="line">d.getDate(); <span class="comment">//9</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>getFullYear方法:根据本地时间返回指定对象的年份(四位数年份时返回四位数字).<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(d);<span class="comment">//Wed Oct 09 2019 10:52:24 GMT+0800 (中国标准时间)</span></span><br><span class="line">d.getFullYear();<span class="comment">//2019</span></span><br></pre></td></tr></table></figure></li>
-<li>getHours方法:根据本地时间返回指定日期对象的小时（0-23）.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(d);<span class="comment">//Wed Oct 09 2019 10:52:24 GMT+0800 (中国标准时间)</span></span><br><span class="line">d.getHours();<span class="comment">//10</span></span><br></pre></td></tr></table></figure></li>
-<li>getMinutes方法:根据本地时间返回指定日期对象的分钟（0-59）</li>
-<li>getSeconds方法:得到秒部分</li>
-<li>getMilliseconds方法:得到毫秒部分</li>
-<li>getTime方法:得到时间戳</li>
-<li>getMonth方法:得到月,从0开始计算</li>
+<li>getDay 方法:根据本地时间返回指定日期对象的星期中的第几天（0-6）.0 表示星期天</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(d); <span class="comment">//Wed Oct 09 2019 10:52:24 GMT+0800 (中国标准时间)</span></span><br><span class="line">d.getDay(); <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>getFullYear 方法:根据本地时间返回指定对象的年份(四位数年份时返回四位数字).</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(d); <span class="comment">//Wed Oct 09 2019 10:52:24 GMT+0800 (中国标准时间)</span></span><br><span class="line">d.getFullYear(); <span class="comment">//2019</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>getHours 方法:根据本地时间返回指定日期对象的小时（0-23）.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(d); <span class="comment">//Wed Oct 09 2019 10:52:24 GMT+0800 (中国标准时间)</span></span><br><span class="line">d.getHours(); <span class="comment">//10</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>getMinutes 方法:根据本地时间返回指定日期对象的分钟（0-59）</li>
+<li>getSeconds 方法:得到秒部分</li>
+<li>getMilliseconds 方法:得到毫秒部分</li>
+<li>getTime 方法:得到时间戳</li>
+<li>getMonth 方法:得到月,从 0 开始计算</li>
 </ul>
 <ul>
-<li><p>setDate方法:设置日期</p>
+<li><p>setDate 方法:设置日期</p>
 </li>
-<li><p>setMonth方法:设置月份</p>
+<li><p>setMonth 方法:设置月份</p>
 </li>
-<li><p>getFullYear方法:设置年</p>
+<li><p>getFullYear 方法:设置年</p>
 </li>
 <li><p>setMinutes</p>
 </li>
@@ -1052,28 +1123,28 @@ e.执行 C</code></pre><p>例子：</p>
 </li>
 <li><p>setTime:从新设置时间戳</p>
 </li>
-<li><p>toDateString方法:将日期部分转换为可读的字符串.</p>
+<li><p>toDateString 方法:将日期部分转换为可读的字符串.</p>
 </li>
-<li><p>toISOString方法:将整个对象转换为ISO标准的字符串格式.</p>
+<li><p>toISOString 方法:将整个对象转换为 ISO 标准的字符串格式.</p>
 </li>
-<li><p>toLocaleDateString方法:根据当前系统的地区设置,将日期部分转换为可读的字符串</p>
+<li><p>toLocaleDateString 方法:根据当前系统的地区设置,将日期部分转换为可读的字符串</p>
 </li>
-<li><p>toLocaleString方法:根据当前系统的地区设置,将整个日期对象转换为可读的字符串</p>
+<li><p>toLocaleString 方法:根据当前系统的地区设置,将整个日期对象转换为可读的字符串</p>
 </li>
-<li><p>toLocaleTimeString方法:根据当前系统的地区设置,将时间部分转换为可读的字符串</p>
+<li><p>toLocaleTimeString 方法:根据当前系统的地区设置,将时间部分转换为可读的字符串</p>
 </li>
 </ul>
 <p><strong>友好的日期字符串</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 年-月-日 时:分:秒</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getDateString</span>(<span class="params">date</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> year = date.getFullYear().toString().padStart(<span class="number">4</span>,<span class="string">"0"</span>);</span><br><span class="line">        <span class="keyword">var</span> month = (date.getMonth() + <span class="number">1</span>).toString().padStart(<span class="number">2</span>,<span class="string">"0"</span>);</span><br><span class="line">        <span class="keyword">var</span> day = date.getDate().toString().padStart(<span class="number">2</span>,<span class="string">"0"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> hour = date.getHours().toString().padStart(<span class="number">2</span>,<span class="string">"0"</span>)</span><br><span class="line">        <span class="keyword">var</span> minute = date.getMinutes().toString().padStart(<span class="number">2</span>,<span class="string">"0"</span>)</span><br><span class="line">        <span class="keyword">var</span> hour = date.getSeconds().toString().padStart(<span class="number">2</span>,<span class="string">"0"</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;year&#125;</span>-<span class="subst">$&#123;month&#125;</span>-<span class="subst">$&#123;day&#125;</span> <span class="subst">$&#123;hour&#125;</span>:<span class="subst">$&#123;minute&#125;</span>:<span class="subst">$&#123;hour&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 年-月-日 时:分:秒</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getDateString</span>(<span class="params">date</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> year = date</span><br><span class="line">    .getFullYear()</span><br><span class="line">    .toString()</span><br><span class="line">    .padStart(<span class="number">4</span>, <span class="string">"0"</span>);</span><br><span class="line">  <span class="keyword">var</span> month = (date.getMonth() + <span class="number">1</span>).toString().padStart(<span class="number">2</span>, <span class="string">"0"</span>);</span><br><span class="line">  <span class="keyword">var</span> day = date</span><br><span class="line">    .getDate()</span><br><span class="line">    .toString()</span><br><span class="line">    .padStart(<span class="number">2</span>, <span class="string">"0"</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> hour = date</span><br><span class="line">    .getHours()</span><br><span class="line">    .toString()</span><br><span class="line">    .padStart(<span class="number">2</span>, <span class="string">"0"</span>);</span><br><span class="line">  <span class="keyword">var</span> minute = date</span><br><span class="line">    .getMinutes()</span><br><span class="line">    .toString()</span><br><span class="line">    .padStart(<span class="number">2</span>, <span class="string">"0"</span>);</span><br><span class="line">  <span class="keyword">var</span> hour = date</span><br><span class="line">    .getSeconds()</span><br><span class="line">    .toString()</span><br><span class="line">    .padStart(<span class="number">2</span>, <span class="string">"0"</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;year&#125;</span>-<span class="subst">$&#123;month&#125;</span>-<span class="subst">$&#123;day&#125;</span> <span class="subst">$&#123;hour&#125;</span>:<span class="subst">$&#123;minute&#125;</span>:<span class="subst">$&#123;hour&#125;</span>`</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="日期的运算"><a href="#日期的运算" class="headerlink" title="日期的运算"></a>日期的运算</h2><p>日期对象重写了object中的valueOf方法,返回的是一个数字表示时间戳 <br><strong>(进行加号运算时,则是字符串拼接)</strong> <br>因此,日期对象可以进行数学运算 </p>
+<h2 id="日期的运算"><a href="#日期的运算" class="headerlink" title="日期的运算"></a>日期的运算</h2><p>日期对象重写了 object 中的 valueOf 方法,返回的是一个数字表示时间戳 <br><strong>(进行加号运算时,则是字符串拼接)</strong> <br>因此,日期对象可以进行数学运算</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>(),</span><br><span class="line">    d1 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(d1 - d);</span><br><span class="line"><span class="built_in">console</span>.log(d1.valueOf()-d.valueOf()))</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 练习</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 计算还有多少天过生日</span></span><br><span class="line"><span class="comment"> * @param &#123;*&#125; month 月 </span></span><br><span class="line"><span class="comment"> * @param &#123;*&#125; day 日</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getDaysToBirthday</span>(<span class="params">month, day</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    <span class="keyword">var</span> thisYear = now.getFullYear();</span><br><span class="line">    <span class="comment">//今年生日</span></span><br><span class="line">    <span class="keyword">var</span> birthday = <span class="keyword">new</span> <span class="built_in">Date</span>(thisYear, month - <span class="number">1</span>, day);</span><br><span class="line">    <span class="keyword">if</span> (birthday &lt; now) &#123;</span><br><span class="line">        birthday.setFullYear(now.getFullYear() + <span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> timeDec = birthday - now;</span><br><span class="line">    <span class="keyword">var</span> days = timeDec / (<span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.ceil(days);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 打印当前月份的星期</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">      <span class="keyword">var</span> m = now.getMonth() + <span class="number">1</span>;</span><br><span class="line">      <span class="comment">//得到这一年,这一个月的天数</span></span><br><span class="line">      <span class="keyword">var</span> y = now.getFullYear();</span><br><span class="line">      <span class="keyword">var</span> days = <span class="keyword">new</span> <span class="built_in">Date</span>(y, m, <span class="number">0</span>).getDate();</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= days; i++) &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;y&#125;</span>年<span class="subst">$&#123;m&#125;</span>月<span class="subst">$&#123;i&#125;</span>日:星期<span class="subst">$&#123;getDayOfWeek(y,m,i)&#125;</span>`</span>)</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">getDayOfWeek</span>(<span class="params">year, month, day</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>(year, month - <span class="number">1</span>, day);</span><br><span class="line">      <span class="keyword">var</span> day = d.getDay(); <span class="comment">//得到星期</span></span><br><span class="line">      <span class="keyword">switch</span> (day) &#123;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">              <span class="keyword">return</span> <span class="string">"日"</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">              <span class="keyword">return</span> <span class="string">"一"</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">              <span class="keyword">return</span> <span class="string">"二"</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">              <span class="keyword">return</span> <span class="string">"三"</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">              <span class="keyword">return</span> <span class="string">"四"</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">              <span class="keyword">return</span> <span class="string">"五"</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">              <span class="keyword">return</span> <span class="string">"六"</span>;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  print();</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 练习</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 计算还有多少天过生日</span></span><br><span class="line"><span class="comment"> * @param &#123;*&#125; month 月</span></span><br><span class="line"><span class="comment"> * @param &#123;*&#125; day 日</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getDaysToBirthday</span>(<span class="params">month, day</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">  <span class="keyword">var</span> thisYear = now.getFullYear();</span><br><span class="line">  <span class="comment">//今年生日</span></span><br><span class="line">  <span class="keyword">var</span> birthday = <span class="keyword">new</span> <span class="built_in">Date</span>(thisYear, month - <span class="number">1</span>, day);</span><br><span class="line">  <span class="keyword">if</span> (birthday &lt; now) &#123;</span><br><span class="line">    birthday.setFullYear(now.getFullYear() + <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> timeDec = birthday - now;</span><br><span class="line">  <span class="keyword">var</span> days = timeDec / (<span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.ceil(days);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 打印当前月份的星期</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">  <span class="keyword">var</span> m = now.getMonth() + <span class="number">1</span>;</span><br><span class="line">  <span class="comment">//得到这一年,这一个月的天数</span></span><br><span class="line">  <span class="keyword">var</span> y = now.getFullYear();</span><br><span class="line">  <span class="keyword">var</span> days = <span class="keyword">new</span> <span class="built_in">Date</span>(y, m, <span class="number">0</span>).getDate();</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= days; i++) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;y&#125;</span>年<span class="subst">$&#123;m&#125;</span>月<span class="subst">$&#123;i&#125;</span>日:星期<span class="subst">$&#123;getDayOfWeek(y, m, i)&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getDayOfWeek</span>(<span class="params">year, month, day</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>(year, month - <span class="number">1</span>, day);</span><br><span class="line">  <span class="keyword">var</span> day = d.getDay(); <span class="comment">//得到星期</span></span><br><span class="line">  <span class="keyword">switch</span> (day) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"日"</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"一"</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"二"</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"三"</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"四"</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"五"</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"六"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">print();</span><br></pre></td></tr></table></figure>
 
-<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>正则表达式是国际标准,跨越语言</p>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>正则表达式是国际标准,跨越语言</p>
 <p>正则表达式是一个规则,用于验证字符串.</p>
-<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ol>
+<h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><ol>
 <li>字面量匹配</li>
 </ol>
 <p>规则中直接书写字面量字符</p>
@@ -1104,69 +1175,202 @@ e.执行 C</code></pre><p>例子：</p>
 </ol>
 <p>多个规则之间,适用或者<code>|</code>,表示多个规则任选其一</p>
 <p>前面的规则出现的次数</p>
-<h3 id="Js中的应用"><a href="#Js中的应用" class="headerlink" title="Js中的应用"></a>Js中的应用</h3><p>js中,正则表达式表现为一个对象,该对象是通过构造函数RegExp</p>
-<h3 id="创建正则对象"><a href="#创建正则对象" class="headerlink" title="创建正则对象"></a>创建正则对象</h3><ol>
+<h3 id="Js-中的应用"><a href="#Js-中的应用" class="headerlink" title="Js 中的应用"></a>Js 中的应用</h3><p>js 中,正则表达式表现为一个对象,该对象是通过构造函数 RegExp</p>
+<h4 id="创建正则对象"><a href="#创建正则对象" class="headerlink" title="创建正则对象"></a>创建正则对象</h4><ol>
 <li>字面量模式</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// var regexp = /规则/;</span></span><br><span class="line"><span class="keyword">var</span> regexp = <span class="regexp">/^-?\d+(\.0+)?$/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// var regexp = /规则/;</span></span><br><span class="line"><span class="keyword">var</span> regexp = <span class="regexp">/^-?\d+(\.0+)?$/</span>;</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>构造函数模式</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> regexp = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"^-?\d+(\.0+)?$"</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> regexp = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"^-?d+(.0+)?$"</span>);</span><br></pre></td></tr></table></figure>
 
-<h3 id="正则实例成员"><a href="#正则实例成员" class="headerlink" title="正则实例成员"></a>正则实例成员</h3><ul>
+<h4 id="正则实例成员"><a href="#正则实例成员" class="headerlink" title="正则实例成员"></a>正则实例成员</h4><ul>
 <li>global</li>
 <li>ignoreCase</li>
 <li>multiline</li>
 <li>source</li>
-<li>test方法:验证某个字符串是否满足规则</li>
-<li>exec方法:execute,执行匹配,返回执行结果</li>
+<li>test 方法:验证某个字符串是否满足规则</li>
+<li>exec 方法:execute,执行匹配,返回执行结果</li>
 </ul>
 <blockquote>
 <p>正则表达式,默认情况下,使用贪婪模式<br>在量词后,加上?,表示进入非贪婪模式</p>
 </blockquote>
-<h3 id="字符串中的正则方法-String-Javascript-MDN"><a href="#字符串中的正则方法-String-Javascript-MDN" class="headerlink" title="字符串中的正则方法 (String Javascript MDN)"></a>字符串中的正则方法 (String Javascript MDN)</h3><ul>
-<li>match方法:使用正则表达式与字符串相比较</li>
+<h4 id="字符串中的正则方法-String-Javascript-MDN"><a href="#字符串中的正则方法-String-Javascript-MDN" class="headerlink" title="字符串中的正则方法 (String Javascript MDN)"></a>字符串中的正则方法 (String Javascript MDN)</h4><ul>
+<li>match 方法:使用正则表达式与字符串相比较</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"sadds,dasdasd, sadasd\ndadsd\tdasda"</span>;</span><br><span class="line"><span class="keyword">var</span> result = s.match(<span class="regexp">/\d+/</span>);</span><br><span class="line"><span class="built_in">console</span>.log(s,result);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"sadds,dasdasd, sadasd\ndadsd\tdasda"</span>;</span><br><span class="line"><span class="keyword">var</span> result = s.match(<span class="regexp">/\d+/</span>);</span><br><span class="line"><span class="built_in">console</span>.log(s, result);</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>search方法:对正则表达式和指定字符串进行匹配搜索，返回第一个出现的匹配项的下标</li>
+<li>search 方法:对正则表达式和指定字符串进行匹配搜索，返回第一个出现的匹配项的下标</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"sadds,dasdasd, sadasd\ndadsd\tdasda"</span>;</span><br><span class="line"><span class="keyword">var</span> result = s.search(<span class="regexp">/\d+/g</span>)</span><br><span class="line"><span class="built_in">console</span>.log(s,result);</span><br><span class="line">result = search(<span class="regexp">/\d+/g</span>)</span><br><span class="line"><span class="built_in">console</span>.log(s,result);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"sadds,dasdasd, sadasd\ndadsd\tdasda"</span>;</span><br><span class="line"><span class="keyword">var</span> result = s.search(<span class="regexp">/\d+/g</span>);</span><br><span class="line"><span class="built_in">console</span>.log(s, result);</span><br><span class="line">result = search(<span class="regexp">/\d+/g</span>);</span><br><span class="line"><span class="built_in">console</span>.log(s, result);</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>split方法(可以写正则表达式):通过分离字符串成字串，将字符串对象分割成字符串数组</li>
+<li>split 方法(可以写正则表达式):通过分离字符串成字串，将字符串对象分割成字符串数组</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"sadds,dasdasd, sadasd\ndadsd\tdasda"</span>;</span><br><span class="line"><span class="keyword">var</span> result = s.split(<span class="regexp">/[,\-\s]/</span>);</span><br><span class="line"><span class="built_in">console</span>.log(s,result);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"sadds,dasdasd, sadasd\ndadsd\tdasda"</span>;</span><br><span class="line"><span class="keyword">var</span> result = s.split(<span class="regexp">/[,\-\s]/</span>);</span><br><span class="line"><span class="built_in">console</span>.log(s, result);</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>replace方法;被用来在正则表达式和字符串直接比较，然后用新的子串来替换被匹配的子串</li>
+<li>replace 方法;被用来在正则表达式和字符串直接比较，然后用新的子串来替换被匹配的子串</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"sadds,dasdasd, sadasd\ndadsd\tdasda"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(s);</span><br><span class="line">s = s.replace(<span class="regexp">/\s*\b[a-z]\s*/g</span>,(match)=&gt;&#123;</span><br><span class="line">  <span class="keyword">return</span> match.toUpperCase().trim();</span><br><span class="line">&#125;));</span><br><span class="line"><span class="built_in">console</span>.log(s);</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//将字符串中出现的敏感词替换为指定的字符串</span></span><br><span class="line">  <span class="keyword">var</span> senWords = [</span><br><span class="line">      <span class="string">"色情"</span>,</span><br><span class="line">      <span class="string">"暴力"</span>,</span><br><span class="line">      <span class="string">"反动"</span>,</span><br><span class="line">      <span class="string">"1024"</span></span><br><span class="line">  ]</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">removeSensitiveWords</span>(<span class="params">s, rep</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">`(<span class="subst">$&#123;senWords.join(<span class="string">"|"</span>)&#125;</span>)+`</span>, <span class="string">"g"</span>);</span><br><span class="line">      <span class="keyword">return</span> s.replace(reg, rep)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(removeSensitiveWords(<span class="string">"abc1024dfsjf色情541024,暴力"</span>, <span class="string">"***"</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//将字符串中出现的敏感词替换为指定的字符串</span></span><br><span class="line"><span class="keyword">var</span> senWords = [<span class="string">"色情"</span>, <span class="string">"暴力"</span>, <span class="string">"反动"</span>, <span class="string">"1024"</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeSensitiveWords</span>(<span class="params">s, rep</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">`(<span class="subst">$&#123;senWords.join(<span class="string">"|"</span>)&#125;</span>)+`</span>, <span class="string">"g"</span>);</span><br><span class="line">  <span class="keyword">return</span> s.replace(reg, rep);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(removeSensitiveWords(<span class="string">"abc1024dfsjf色情541024,暴力"</span>, <span class="string">"***"</span>));</span><br></pre></td></tr></table></figure>
 
-<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><h3 id="捕获组"><a href="#捕获组" class="headerlink" title="捕获组"></a>捕获组</h3><p>用小括号包裹的部分叫做捕获组,捕获组会出现在匹配结果中</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\d[a-z])+/g</span>;</span><br><span class="line"><span class="keyword">var</span> s = <span class="string">"d1-23ad-s2ad-1ds-d21s"</span>;</span><br><span class="line"><span class="keyword">while</span>(result = reg.exec(s))&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(result)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> s = <span class="string">"2015-5-4,2019-6-19,2000-1-5"</span></span><br><span class="line"><span class="comment">//  得到每一个日期,并得到每个日期的年月日</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\d&#123;4&#125;)-(\d&#123;1,2&#125;)-(\d&#123;1,2&#125;)/g</span>;</span><br><span class="line"><span class="keyword">while</span> (result = reg.exec(s)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result[<span class="number">0</span>],result[<span class="number">1</span>],result[<span class="number">2</span>],result[<span class="number">3</span>])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h3><h4 id="捕获组"><a href="#捕获组" class="headerlink" title="捕获组"></a>捕获组</h4><p>用小括号包裹的部分叫做捕获组,捕获组会出现在匹配结果中</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\d[a-z])+/g</span>;</span><br><span class="line"><span class="keyword">var</span> s = <span class="string">"d1-23ad-s2ad-1ds-d21s"</span>;</span><br><span class="line"><span class="keyword">while</span> ((result = reg.exec(s))) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> s = <span class="string">"2015-5-4,2019-6-19,2000-1-5"</span>;</span><br><span class="line"><span class="comment">//  得到每一个日期,并得到每个日期的年月日</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\d&#123;4&#125;)-(\d&#123;1,2&#125;)-(\d&#123;1,2&#125;)/g</span>;</span><br><span class="line"><span class="keyword">while</span> ((result = reg.exec(s))) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(result[<span class="number">0</span>], result[<span class="number">1</span>], result[<span class="number">2</span>], result[<span class="number">3</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>捕获值可以命名,叫做具名捕获组</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"2015-5-4,2019-6-19,2000-1-5"</span></span><br><span class="line"><span class="comment">//  得到每一个日期,并得到每个日期的年月日</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(?&lt;year&gt;\d&#123;4&#125;)-(?&lt;month&gt;\d&#123;1,2&#125;)-(?&lt;day&gt;\d&#123;1,2&#125;)/g</span>;</span><br><span class="line"><span class="keyword">while</span> (result = reg.exec(s)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result)</span><br><span class="line">    <span class="built_in">console</span>.log(result[<span class="number">0</span>], result[<span class="number">1</span>], result[<span class="number">2</span>], result[<span class="number">3</span>])</span><br><span class="line">    <span class="built_in">console</span>.log(result.groups.year,result.groups.month,result.groups.day)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"2015-5-4,2019-6-19,2000-1-5"</span>;</span><br><span class="line"><span class="comment">//  得到每一个日期,并得到每个日期的年月日</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(?&lt;year&gt;\d&#123;4&#125;)-(?&lt;month&gt;\d&#123;1,2&#125;)-(?&lt;day&gt;\d&#123;1,2&#125;)/g</span>;</span><br><span class="line"><span class="keyword">while</span> ((result = reg.exec(s))) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(result);</span><br><span class="line">  <span class="built_in">console</span>.log(result[<span class="number">0</span>], result[<span class="number">1</span>], result[<span class="number">2</span>], result[<span class="number">3</span>]);</span><br><span class="line">  <span class="built_in">console</span>.log(result.groups.year, result.groups.month, result.groups.day);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>非捕获组</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"2015-5-4,2019-6-19,2000-1-5"</span></span><br><span class="line"><span class="comment">//  得到每一个日期,并得到每个日期的年月日</span></span><br><span class="line"><span class="comment">// 非捕获组</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(?:\d&#123;4&#125;)-(?:\d&#123;1,2&#125;)-(?:\d&#123;1,2&#125;)/g</span>;</span><br><span class="line"><span class="keyword">while</span> (result = reg.exec(s)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result)</span><br><span class="line">    <span class="built_in">console</span>.log(result[<span class="number">0</span>], result[<span class="number">1</span>], result[<span class="number">2</span>], result[<span class="number">3</span>])</span><br><span class="line">    <span class="built_in">console</span>.log(result.groups.year,result.groups.month,result.groups.day)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s = s.replace(reg,(match,g1,g2,g3)=&gt;&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(match,g1,g2,g3);</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;match&#125;</span>/<span class="subst">$&#123;g1&#125;</span>/<span class="subst">$&#123;g2&#125;</span>/<span class="subst">$&#123;g3&#125;</span>`</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(s);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"2015-5-4,2019-6-19,2000-1-5"</span>;</span><br><span class="line"><span class="comment">//  得到每一个日期,并得到每个日期的年月日</span></span><br><span class="line"><span class="comment">// 非捕获组</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(?:\d&#123;4&#125;)-(?:\d&#123;1,2&#125;)-(?:\d&#123;1,2&#125;)/g</span>;</span><br><span class="line"><span class="keyword">while</span> ((result = reg.exec(s))) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(result);</span><br><span class="line">  <span class="built_in">console</span>.log(result[<span class="number">0</span>], result[<span class="number">1</span>], result[<span class="number">2</span>], result[<span class="number">3</span>]);</span><br><span class="line">  <span class="built_in">console</span>.log(result.groups.year, result.groups.month, result.groups.day);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">s = s.replace(reg, (match, g1, g2, g3) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(match, g1, g2, g3);</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;match&#125;</span>/<span class="subst">$&#123;g1&#125;</span>/<span class="subst">$&#123;g2&#125;</span>/<span class="subst">$&#123;g3&#125;</span>`</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(s);</span><br></pre></td></tr></table></figure>
 
-<h3 id="反向引用"><a href="#反向引用" class="headerlink" title="反向引用"></a>反向引用</h3><p>在正则表达式中,使用某个捕获组,<code>\捕获组编号</code></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// \1 引用之前的捕获组</span></span><br><span class="line"><span class="keyword">var</span>  reg = <span class="regexp">/(\d&#123;2&#125;)\1/g</span></span><br><span class="line"><span class="keyword">var</span> s = <span class="string">"1313"</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(s));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 找出该字符串中连续的字符串</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"aaaaaaaaadfsdfsfaaaaabbbbbbbbbbgggggg"</span>;  </span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(?&lt;char&gt;\w)\k&lt;char&gt;+/g</span>; </span><br><span class="line"><span class="keyword">while</span>(result = reg.exec(str))&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="反向引用"><a href="#反向引用" class="headerlink" title="反向引用"></a>反向引用</h4><p>在正则表达式中,使用某个捕获组,<code>\捕获组编号</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// \1 引用之前的捕获组</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\d&#123;2&#125;)\1/g</span>;</span><br><span class="line"><span class="keyword">var</span> s = <span class="string">"1313"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(s));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 找出该字符串中连续的字符串</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"aaaaaaaaadfsdfsfaaaaabbbbbbbbbbgggggg"</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(?&lt;char&gt;\w)\k&lt;char&gt;+/g</span>;</span><br><span class="line"><span class="keyword">while</span> ((result = reg.exec(str))) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h4 id="正向断言-预查"><a href="#正向断言-预查" class="headerlink" title="正向断言(预查)"></a>正向断言(预查)</h4><p>检查某个字符串后面的字符是否满足某个规则,该规则不成为匹配结果,并且不称为捕获组</p>
+<p><code>?=</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hjkfdshfkjshfh231sf3sfdsf4s65fsf123sdf1s5"</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/[a-zA-Z](?=\d+)/g</span>;</span><br><span class="line"><span class="keyword">while</span> ((result = reg.exec(str))) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 每隔三个字符添加一个逗号</span></span><br><span class="line"><span class="keyword">var</span> s = <span class="string">"1231561321"</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/\B(?=(\d&#123;3&#125;)+$)/g</span>;</span><br><span class="line">s = s.replace(reg, <span class="string">","</span>);</span><br><span class="line"><span class="built_in">console</span>.log(s);</span><br></pre></td></tr></table></figure>
 
-<h3 id="正向断言-预查"><a href="#正向断言-预查" class="headerlink" title="正向断言(预查)"></a>正向断言(预查)</h3><p>检查某个字符串后面的字符是否满足某个规则,该规则不成为匹配结果,并且不称为捕获组</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">```js</span><br><span class="line">var str = &quot;hjkfdshfkjshfh231sf3sfdsf4s65fsf123sdf1s5&quot;;</span><br><span class="line">var reg = /[a-zA-Z](?=\d+)/g;</span><br><span class="line">while(result = reg.exec(str))&#123;</span><br><span class="line">  console.log(result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 每隔三个字符添加一个逗号</span><br><span class="line">var s = &quot;1231561321&quot;;</span><br><span class="line">var reg = /\B(?=(\d&#123;3&#125;)+$)/g;</span><br><span class="line">s = s.replace(reg, &quot;,&quot;);</span><br><span class="line">console.log(s);</span><br></pre></td></tr></table></figure>
+<h4 id="负向断言-预查"><a href="#负向断言-预查" class="headerlink" title="负向断言(预查)"></a>负向断言(预查)</h4><p>检查某个字符串后面的字符是否不满足某个规则,该规则不成为匹配结果,并且不称为捕获组</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//得到后边没有数字的字母</span></span><br><span class="line"><span class="keyword">var</span> s = <span class="string">"asd111dasd555cxz555"</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/[a-zA-Z](?!\d+)/g</span>;</span><br><span class="line"><span class="keyword">while</span> ((result = reg.exec(s))) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断密码强度</span></span><br><span class="line"><span class="comment">// 要求密码中必须出现小写字母,大写字母,数字,特殊字符(!@#_,.)</span></span><br><span class="line"><span class="keyword">var</span> s = <span class="string">"24dsd45A."</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#_,.]).&#123;6,12&#125;$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(s));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断密码强度</span></span><br><span class="line"><span class="comment">// 密码长度必须是6-12位</span></span><br><span class="line"><span class="comment">// 出现小写字母,大写字母,数字,特殊字符(!@#_,.) -&gt; 强</span></span><br><span class="line"><span class="comment">// 出现小写字母,大写字母,数字 -&gt; 中</span></span><br><span class="line"><span class="comment">// 出现小写字母,大写字母 -&gt; 轻</span></span><br><span class="line"><span class="comment">// 其他 -&gt; 不满足要求</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">judgePwd</span>(<span class="params">pwd</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="regexp">/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#_,.]).&#123;6,12&#125;$/</span>.test(pwd)) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"强"</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).&#123;6,12&#125;$/</span>.test(pwd)) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"中"</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/^(?=.*[a-z])(?=.*[A-Z]).&#123;6,12&#125;$/</span>.test(pwd)) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"轻"</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"不满足要求"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h1 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h1><p>Js 中的错误分为:</p>
+<ol>
+<li>语法错误:会导致<strong>整个</strong>脚本块无法执行,但不会影响其他的脚本块</li>
+<li>运行错误<ol>
+<li>运行报错:会导致当前脚本块后续代码无法执行</li>
+<li>运行结果不符合预期</li>
+</ol>
+</li>
+</ol>
+<h2 id="调试错误"><a href="#调试错误" class="headerlink" title="调试错误"></a>调试错误</h2><ol>
+<li>控制台打印</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a, b, <span class="keyword">typeof</span> a, <span class="keyword">typeof</span> b); <span class="comment">// a b string string</span></span><br><span class="line">  <span class="comment">//通过上述打印得知,两者皆为字符串不为数字,所以会导致字符串拼接,得不到正确的结果.可以使用Number()函数转换为数字,或在prompt()前加上一个加号,即可.</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Number</span>(a) + <span class="built_in">Number</span>(b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> n1 = prompt(<span class="string">"请输入第一个数字:"</span>);</span><br><span class="line"><span class="keyword">var</span> n2 = prompt(<span class="string">"请输入第二个数字:"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sum(n1, n2));</span><br></pre></td></tr></table></figure>
 
-<h3 id="负向断言-预查"><a href="#负向断言-预查" class="headerlink" title="负向断言(预查)"></a>负向断言(预查)</h3><p>检查某个字符串后面的字符是否不满足某个规则,该规则不成为匹配结果,并且不称为捕获组</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//得到后边没有数字的字母</span></span><br><span class="line"><span class="keyword">var</span> s = <span class="string">"asd111dasd555cxz555"</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/[a-zA-Z](?!\d+)/g</span>;</span><br><span class="line"><span class="keyword">while</span> (result = reg.exec(s)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断密码长度</span></span><br><span class="line"><span class="comment">// 要求密码中必须出现小写字母,大写字母,数字,特殊字符(!@#_,.)</span></span><br><span class="line"><span class="keyword">var</span> s = <span class="string">"24dsd45A."</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#_,.]).&#123;6,12&#125;$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(s));</span><br></pre></td></tr></table></figure>]]></content>
+<ol start="2">
+<li>断点调试</li>
+</ol>
+<h2 id="抛出错误"><a href="#抛出错误" class="headerlink" title="抛出错误"></a>抛出错误</h2><p>错误在 Js 中本质上是一个对象,抛出错误的语法为</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">throw</span> 错误对象;</span><br></pre></td></tr></table></figure>
+
+<p>错误对象的构造函数为 Error</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isPrime</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">isNaN</span>(n)) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"必须是一个正常的数字"</span>);</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">2</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> flase;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (n % i === <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(isPrime(<span class="number">6</span>));</span><br></pre></td></tr></table></figure>
+
+<h2 id="捕获错误"><a href="#捕获错误" class="headerlink" title="捕获错误"></a>捕获错误</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="comment">// 代码块1</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (错误对象) &#123;</span><br><span class="line">  <span class="comment">// 代码块2</span></span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">  <span class="comment">// 代码块3</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当运行代码块 1 的时候,如果发生错误.立即停止代码 1 的执行,转而执行代码块 2,错误对象为抛出的错误对象,无论代码 1 和代码 2 是否执行,最终都将执行代码 3</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  b();</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"a1"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    c();</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"b1"</span>);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"运行c的时候发生了问题"</span>, err);</span><br><span class="line">  &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"处理完成"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">"dadadasdasd"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"c1"</span>);</span><br><span class="line">&#125;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure>
+
+<h1 id="web-api-概述"><a href="#web-api-概述" class="headerlink" title="web api 概述"></a>web api 概述</h1><p>标准库:ECMAscript 中的对象和函数</p>
+<p>web Api:浏览器宿主环境中的对象和函数</p>
+<p><strong>web Api 的特点:</strong></p>
+<ol>
+<li>知识繁杂</li>
+<li>成体系的知识</li>
+<li>程序思维: 知识+程序思维 = 应用</li>
+<li>兼容性: 了解,不记忆</li>
+</ol>
+<p>web Api:</p>
+<ul>
+<li>BOM : Browser Object Model,浏览器对象模型</li>
+<li>DOM : Document Object Model,文档对象模型</li>
+</ul>
+<p>BOM:控制浏览器的本身<br>DOM:控制 HTMl 文档</p>
+<p>webApi 由 W3C(万维网联盟) 制定</p>
+<h2 id="关于-DOM"><a href="#关于-DOM" class="headerlink" title="关于 DOM"></a>关于 DOM</h2><ul>
+<li>DOM 0</li>
+<li>DOM 1</li>
+<li>DOM 2</li>
+<li>DOM 3</li>
+<li>DOM 4 2015 年</li>
+</ul>
+<p><strong>DOM 是什么?</strong></p>
+<p>DOM 的核心理念,是将一个 HTML 或 XML 文档,用对象模型展示,每个对象称之为 dom 对象,dom 对象又称之为节点 Node</p>
+<p><strong>节点类型:</strong></p>
+<ul>
+<li><strong>DocumentType</strong> 文档类型节点</li>
+<li><strong>Document</strong> 文档节点 表示整文档</li>
+<li><strong>Comment</strong> 注释节点</li>
+<li><strong>Element</strong> 元素节点</li>
+<li><strong>TEXT</strong> 文本节点</li>
+<li><strong>Attrbuta</strong> 属性节点</li>
+<li><strong>DocumentFragment</strong> 文档片段节点</li>
+</ul>
+<p>dom 树:文档中不同的节点形成的树形结构.</p>
+<blockquote>
+<p>全局对象 window 中有属性 document,代表的是整个文本节点</p>
+</blockquote>
+<h2 id="旧的获取元素节点的方式"><a href="#旧的获取元素节点的方式" class="headerlink" title="旧的获取元素节点的方式"></a>旧的获取元素节点的方式</h2><p>dom 0</p>
+<ul>
+<li>document.body 获取 body 元素节点</li>
+<li>document.head 获取 head 元素节点</li>
+<li>document.links 获取页面上所有的超链接元素节点,类(伪)数组</li>
+<li>document.anchors 获取页面上所有的锚链接(具有 name 属性)元素节点</li>
+<li>document.forms 获取页面上所有的 form 元素节点</li>
+</ul>
+<h2 id="新的获取元素节点的方式"><a href="#新的获取元素节点的方式" class="headerlink" title="新的获取元素节点的方式"></a>新的获取元素节点的方式</h2><h3 id="通过方法获取"><a href="#通过方法获取" class="headerlink" title="通过方法获取"></a>通过方法获取</h3><ul>
+<li>document.getElementById(“ID”) 通过 id 获取对应 id 的元素</li>
+<li>document.getElementsByTagName(“element”)[index] 通过元素名称获取元素</li>
+<li>document.getElementByClassName(“className”) 通过元素的类样式获取元素,IE9 以下无效.</li>
+<li>document.getElementsByName(“name”) 通过元素的 name 属性值获取元素</li>
+<li>document.querySelector(“CSS 选择器”) 通过 css 元素选择器获取元素,得到匹配的第一个,IE8 以下无效</li>
+<li>document.querySelectorAll(“CSS 选择器”) 通过 CSS 选择器获取元素,得到所有匹配的结果</li>
+<li>document.documentElement 获取根元素</li>
+</ul>
+<p><strong>细节:</strong></p>
+<ol>
+<li>在所有的得到类数组的方法中,除了 querySelectorAll,其他得方法都是实时更新的.</li>
+<li>getElementById,获取元素的执行效率最高.</li>
+<li>书写了 id 的元素,会自动成为 window 对象的属性.它是一个实时的单对象.事实上得标准.不推荐使用.</li>
+<li>getElementsByTagName,getElementByClassName,querySelector,querySelectorAll,可以作为其他元素节点对象的方法使用</li>
+</ol>
+<h3 id="根据节点关系获取节点"><a href="#根据节点关系获取节点" class="headerlink" title="根据节点关系获取节点"></a>根据节点关系获取节点</h3><ul>
+<li>parentNode 获取父节点,父元素</li>
+<li>previousSibling 返回当前节点的前一个兄弟节点,没有则返回 null.</li>
+<li>nextSibling 返回其父节点的 childNodes 列表中紧跟在其后面的节点，如果指定的节点为最后一个节点，则返回 null。</li>
+<li>childNodes 获取所有的子节点</li>
+<li>firstChild:获取第一个子节点</li>
+<li>lastChild: 获取最后一个子节点</li>
+<li>attributes: 获取某个元素的属性节点</li>
+</ul>
+<p>获取<strong>元素</strong>节点</p>
+<ul>
+<li>parentElement: 获取父<strong>元素</strong></li>
+<li>previousElementSibling: 获取上一个兄弟<strong>元素</strong></li>
+<li>nextElementSibling: 获取下一个兄弟<strong>元素</strong></li>
+<li>children:获取子<strong>元素</strong></li>
+<li>firstElementChild:获取第一个子<strong>元素</strong></li>
+<li>lastElementChild:获取最后一个子<strong>元素</strong></li>
+</ul>
+<h2 id="获取节点信息"><a href="#获取节点信息" class="headerlink" title="获取节点信息"></a>获取节点信息</h2><ul>
+<li>nodeName:返回当前节点的节点名称</li>
+<li>element.attributes:该元素所有属性节点的一个实时集合</li>
+<li>nodeValue:获取节点的值</li>
+<li>nodeType:节点类型,是一个数字</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">元素节点: <span class="number">1</span>;</span><br><span class="line">属性节点: <span class="number">2</span>;</span><br><span class="line">文本节点: <span class="number">3</span>;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h2 id="dom-元素操作"><a href="#dom-元素操作" class="headerlink" title="dom 元素操作"></a>dom 元素操作</h2><h3 id="初识元素事件"><a href="#初识元素事件" class="headerlink" title="初识元素事件"></a>初识元素事件</h3><p>元素事件:某个元素发生一件事[点击:click,…]</p>
+<p>事件处理程序:是一个函数,发生了一件事过后,该做什么事</p>
+<p>注册事件:将事件处理程序与某个事件关联</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>);</span><br><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="comment">//注册事件</span></span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// conding...</span></span><br><span class="line">  <span class="built_in">console</span>.log(count++)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取和设置元素属性"><a href="#获取和设置元素属性" class="headerlink" title="获取和设置元素属性"></a>获取和设置元素属性</h3><h4 id="可识别属性"><a href="#可识别属性" class="headerlink" title="可识别属性"></a>可识别属性</h4><p>正常的HTML属性</p>
+<ul>
+<li>dom对象.属性名</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"hello world"</span> /&gt;</span>&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btnGetTxt"</span>&gt;</span>获取文本框内容<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"btnGetTxt"</span>)</span></span><br><span class="line"><span class="actionscript">  btn.onclick = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> input = <span class="built_in">document</span>.querySelector(<span class="string">"input[type=text]"</span>)</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(input.value)</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>细节:</p>
+<ul>
+<li>正常的属性即使没有赋值,也有默认值</li>
+</ul>
+<h4 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h4><h3 id="获取和设置元素内容"><a href="#获取和设置元素内容" class="headerlink" title="获取和设置元素内容"></a>获取和设置元素内容</h3><h3 id="元素结构重构"><a href="#元素结构重构" class="headerlink" title="元素结构重构"></a>元素结构重构</h3><h3 id="创建和删除元素"><a href="#创建和删除元素" class="headerlink" title="创建和删除元素"></a>创建和删除元素</h3>]]></content>
   </entry>
   <entry>
     <title>hexo博客搭建</title>
@@ -1263,7 +1467,7 @@ e.执行 C</code></pre><p>例子：</p>
 <p>git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a> themes/next</p>
 </blockquote>
 <ol start="2">
-<li>在blog目录下打开站点配置文件(_config.yml),使用任意编辑器打开,找打theme,将其属性值修改为next(即下载主题的名称),在使用以下命令查看新的主题页面</li>
+<li>在blog目录下打开站点配置文件(_config.yml),使用任意编辑器打开,找到theme,将其属性值修改为next(即下载主题的名称),在使用以下命令查看新的主题页面</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean #清除</span><br><span class="line">hexo g #生成</span><br><span class="line">hexo s #启动本地预览服务</span><br></pre></td></tr></table></figure>
 
